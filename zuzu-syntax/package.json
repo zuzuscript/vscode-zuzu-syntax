@@ -1,0 +1,48 @@
+{
+	"name": "zuzu-syntax",
+	"displayName": "ZuzuScript Syntax",
+	"description": "Syntax highlighting for ZuzuScript in Visual Studio Code.",
+	"version": "0.0.1",
+	"publisher": "zuru-zuzu",
+	"license": "GPL-3.0-or-later",
+	"engines": {
+		"vscode": "^1.85.0"
+	},
+	"categories": [
+		"Programming Languages"
+	],
+	"keywords": [
+		"zuzu",
+		"zuzuscript",
+		"syntax",
+		"highlighting"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/zuru-zuzu/zuzu.git",
+		"directory": "extras/vscode/zuzu-syntax"
+	},
+	"contributes": {
+		"languages": [
+			{
+				"id": "zuzu",
+				"aliases": [
+					"ZuzuScript",
+					"zuzu"
+				],
+				"extensions": [
+					".zzs",
+					".zzm"
+				],
+				"configuration": "./language-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "zuzu",
+				"scopeName": "source.zuzu",
+				"path": "./syntaxes/zuzu.tmLanguage.json"
+			}
+		]
+	}
+}
