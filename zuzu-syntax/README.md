@@ -5,11 +5,13 @@ Syntax highlighting support for ZuzuScript in Visual Studio Code.
 ## Features
 
 - Highlights `.zzs` and `.zzm` files.
-- Highlights ZuzuScript keywords, operators, comments, strings,
-	numbers, booleans, null, and set literals.
+- Highlights current ZuzuScript keywords, operators, comments, strings,
+	triple strings, binary strings, template strings, numbers, booleans,
+	null, and set literals.
 - Handles POD sections (`=head1` ... `=cut`) as documentation blocks.
 - Supports bracket/comment behavior through VS Code language
 	configuration.
+- Provides folding markers for class, trait, function, and method blocks.
 
 ## Install for local development
 
