@@ -108,7 +108,7 @@
 				},
 				{
 					"name": "support.class.builtin.zuzu",
-					"match": "\\b(Array|Bag|Boolean|Class|Collection|Dict|Function|Number|Object|Pair|PairList|Set|String|Trait)\\b"
+					"match": "\\b(Any|Array|AssertionException|Bag|BinaryString|Boolean|CancelledException|ChannelClosedException|Class|Collection|Dict|Exception|Function|Null|Number|Object|Pair|PairList|Regexp|Set|String|Task|TimeoutException|Trait|TypeException)\\b"
 				},
 				{
 					"name": "support.function.builtin.zuzu",
@@ -129,6 +129,10 @@
 				{
 					"name": "constant.other.empty-set.zuzu",
 					"match": "∅"
+				},
+				{
+					"name": "constant.language.system.zuzu",
+					"match": "\\b(__argc__|__file__|__global__|__system__)\\b"
 				}
 			]
 		},
@@ -144,7 +148,44 @@
 			"patterns": [
 				{
 					"name": "string.regexp.zuzu",
-					"match": "/(?![/*=\\s])(?:\\\\.|[^/\\\\\\n])+/i?"
+					"begin": "/(?![/*=\\s])(?=(?:\\\\.|\\[[^\\]\\\\]*(?:\\\\.[^\\]\\\\]*)*\\]|\\$\\{[^}]*\\}|[^/\\\\\\n])+/[ig]*)",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.definition.string.begin.zuzu"
+						}
+					},
+					"end": "/[ig]*",
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.definition.string.end.zuzu"
+						}
+					},
+					"patterns": [
+						{
+							"name": "constant.character.escape.zuzu",
+							"match": "\\\\."
+						},
+						{
+							"name": "meta.interpolation.zuzu",
+							"begin": "\\$\\{",
+							"beginCaptures": {
+								"0": {
+									"name": "punctuation.section.embedded.begin.zuzu"
+								}
+							},
+							"end": "\\}",
+							"endCaptures": {
+								"0": {
+									"name": "punctuation.section.embedded.end.zuzu"
+								}
+							},
+							"patterns": [
+								{
+									"include": "$self"
+								}
+							]
+						}
+					]
 				}
 			]
 		},
@@ -319,6 +360,14 @@
 				{
 					"name": "keyword.operator.lambda.zuzu",
 					"match": "->|→"
+				},
+				{
+					"name": "variable.language.placeholder.zuzu",
+					"match": "\\^\\^"
+				},
+				{
+					"name": "keyword.operator.chain.zuzu",
+					"match": "▷|◁|\\|>|<\\|"
 				},
 				{
 					"name": "punctuation.separator.zuzu",

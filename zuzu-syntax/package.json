@@ -2,7 +2,7 @@
 	"name": "zuzu-syntax",
 	"displayName": "ZuzuScript Syntax",
 	"description": "Syntax highlighting for ZuzuScript in Visual Studio Code.",
-	"version": "0.1.0",
+	"version": "0.0.2",
 	"publisher": "zuzuscript",
 	"license": "MIT",
 	"engines": {
