@@ -5,6 +5,9 @@
 	"version": "0.0.2",
 	"publisher": "zuzuscript",
 	"license": "MIT",
+	"scripts": {
+		"test": "node test/static-token-check.js"
+	},
 	"engines": {
 		"vscode": "^1.85.0"
 	},
