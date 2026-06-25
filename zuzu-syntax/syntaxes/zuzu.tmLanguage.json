@@ -387,7 +387,7 @@
 				},
 				{
 					"name": "keyword.operator.arithmetic.zuzu",
-					"match": "\\*\\*|\\+|-|\\*|×|/|÷|_|@\\?|@@|@|√"
+					"match": "\\*\\*|\\+|-|\\*|×|/|÷|_|@\\?|@@|@|√|#"
 				},
 				{
 					"name": "keyword.operator.logical.zuzu",

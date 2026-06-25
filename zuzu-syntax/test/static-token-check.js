@@ -17,6 +17,7 @@ function pattern( name ) {
 }
 
 const wordOperator = pattern( 'keyword.operator.word.zuzu' );
+const arithmetic = pattern( 'keyword.operator.arithmetic.zuzu' );
 const comparison = pattern( 'keyword.operator.comparison.zuzu' );
 const logical = pattern( 'keyword.operator.logical.zuzu' );
 const number = pattern( 'constant.numeric.zuzu' );
@@ -34,6 +35,10 @@ for ( const op of [
 
 for ( const op of [ '∣', '∤' ] ) {
 	assert.match( op, comparison, `${op} is a comparison operator` );
+}
+
+for ( const op of [ '#', '√' ] ) {
+	assert.match( op, arithmetic, `${op} is an arithmetic operator` );
 }
 
 for ( const op of [
